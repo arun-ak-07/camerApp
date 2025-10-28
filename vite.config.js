@@ -9,7 +9,11 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+      includeAssets: [
+        'favicon.ico',
+        'apple-touch-icon.png',
+        'mask-icon.svg'
+      ],
       manifest: {
         id: '/',
         name: 'Camera App',
@@ -18,29 +22,36 @@ export default defineConfig({
         theme_color: '#000000',
         background_color: '#000000',
         display: 'standalone',
+        orientation: 'portrait',
         start_url: '/',
         icons: [
           {
             src: '/web-app-manifest-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           },
           {
             src: '/web-app-manifest-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           }
         ],
-        "screenshots": [
+        screenshots: [
           {
-            "src": "/screenshot1.png",
-            "sizes": "1353x829",
-            "type": "image/png"
+            src: '/screenshot1.png',
+            sizes: '1353x829',
+            type: 'image/png',
+            form_factor: 'narrow', // 👈 marks as portrait/mobile screenshot
+            label: 'Camera preview on mobile'
           },
           {
-            "src": "/screenshot2.png",
-            "sizes": "1246x874",
-            "type": "image/png"
+            src: '/screenshot2.png',
+            sizes: '1246x874',
+            type: 'image/png',
+            form_factor: 'wide', // 👈 marks as landscape/desktop screenshot
+            label: 'Camera preview on desktop'
           }
         ]
       }
