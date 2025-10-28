@@ -6,7 +6,7 @@ const videoConstraints = {
   facingMode: 'user', 
   // Set preferred resolution
   width: { ideal: 1280 }, 
-  height: { ideal: 720 },
+  height: { ideal: 1280 }, // Increased height to make it more square-ish
 };
 
 const Camera = () => {
@@ -107,17 +107,17 @@ const Camera = () => {
     <div className="flex flex-col items-center justify-center p-4 min-h-screen bg-gray-900 sm:p-6 md:p-8">
       
       {/* Component Card */}
-      <div className="w-full max-w-xl bg-gray-800 rounded-xl shadow-2xl p-6 md:p-8">
+      <div className="w-full max-w-xl h-full bg-gray-800 rounded-xl shadow-2xl p-6 md:p-8">
         
         <h2 className="text-3xl font-extrabold mb-2 text-center text-white tracking-tight">
-          Photo Capture
+          ID Photo Capture
         </h2>
-        {/* <p className="text-center text-gray-400 mb-6">
-          Align your face within the guide below.
-        </p> */}
+        <p className="text-center text-gray-400 mb-6">
+          Align your face perfectly within the circular guide.
+        </p>
 
-        {/* 1. Preview Area - Fixed Aspect Ratio and responsive sizing */}
-        <div className="relative w-full aspect-video rounded-lg overflow-hidden border-4 border-white/20 bg-black">
+        {/* 1. Preview Area - Now uses aspect-square for height, or could use a fixed height */}
+        <div className="relative w-full h-full **aspect-square** rounded-lg overflow-hidden border-4 border-white/20 bg-black">
           {error ? (
              // Display error message if camera access failed
              <div className="absolute inset-0 flex items-center justify-center bg-red-900/50 text-white p-4">
@@ -148,22 +148,21 @@ const Camera = () => {
 
               {/* FACE CAPTURE OVERLAY (Only visible during live feed) */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                {/* Face Guide: White semi-transparent oval/circle outline */}
+                {/* Face Guide: Perfect white circle outline */}
                 <div className="
-                  w-4/5 h-4/5 md:w-3/5 md:h-3/5 
+                  w-4/5 h-4/5 md:w-3/5 md:h-4/5 
                   border-4 border-white/70 
-                  rounded-full 
-                  shadow-[0_0_0_9999px_rgba(0,0,0,0.4)]
+                  **rounded-full** shadow-[0_0_0_9999px_rgba(0,0,0,0.4)]
                   transition-all duration-300
                 ">
-                  <div className="absolute inset-0 flex flex-col justify-end items-center mb-4">
+                  {/* <div className="absolute inset-0 flex flex-col justify-end items-center mb-4">
                     <span className="text-white/80 text-sm tracking-wide">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block mr-1 align-sub" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                       </svg>
                       Center your head
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </>
