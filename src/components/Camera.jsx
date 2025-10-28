@@ -110,11 +110,11 @@ const Camera = () => {
       <div className="w-full max-w-xl h-full bg-gray-800 rounded-xl shadow-2xl p-6 md:p-8">
         
         <h2 className="text-3xl font-extrabold mb-2 text-center text-white tracking-tight">
-          ID Photo Capture
+          Photo Capture
         </h2>
-        <p className="text-center text-gray-400 mb-6">
+        {/* <p className="text-center text-gray-400 mb-6">
           Align your face perfectly within the circular guide.
-        </p>
+        </p> */}
 
         {/* 1. Preview Area - Now uses aspect-square for height, or could use a fixed height */}
         <div className="relative w-full h-full **aspect-square** rounded-lg overflow-hidden border-4 border-white/20 bg-black">
