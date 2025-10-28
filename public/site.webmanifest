@@ -23,16 +23,15 @@
     }
   ],
   "screenshots": [
-    {
-      "src": "/screenshot1.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/screenshot2.png",
-      "sizes": "540x720",
-      "type": "image/png"
-    }
-  ]
+  {
+    "src": "/screenshot1.png",
+    "sizes": "1353x829",
+    "type": "image/png"
+  },
+  {
+    "src": "/screenshot2.png",
+    "sizes": "1246x874",
+    "type": "image/png"
+  }
+]
 }
